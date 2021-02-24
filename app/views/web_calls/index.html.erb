@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Web Calls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Zipcode</th>
+      <th>Appliance</th>
+      <th>Asap</th>
+      <th>Timestart</th>
+      <th>Timeend</th>
+      <th>Closed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @web_calls.each do |web_call| %>
+      <tr>
+        <td><%= web_call.name %></td>
+        <td><%= web_call.zipcode %></td>
+        <td><%= web_call.Appliance %></td>
+        <td><%= web_call.asap %></td>
+        <td><%= web_call.timestart %></td>
+        <td><%= web_call.timeend %></td>
+        <td><%= web_call.closed %></td>
+        <td><%= link_to 'Show', web_call %></td>
+        <td><%= link_to 'Edit', edit_web_call_path(web_call) %></td>
+        <td><%= link_to 'Destroy', web_call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Web Call', new_web_call_path %>

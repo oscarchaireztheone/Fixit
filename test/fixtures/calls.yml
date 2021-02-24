@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  pnum: MyString
+  address: MyString
+  model: MyString
+  serial: MyString
+  callsid: MyString
+  appdate: MyString
+  symptom: MyString
+  picture: MyString
+  payid: MyString
+  status: MyString
+
+two:
+  name: MyString
+  pnum: MyString
+  address: MyString
+  model: MyString
+  serial: MyString
+  callsid: MyString
+  appdate: MyString
+  symptom: MyString
+  picture: MyString
+  payid: MyString
+  status: MyString

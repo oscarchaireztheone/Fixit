@@ -1,0 +1,100 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#scrollthing {
+	
+}
+
+
+
+.fade-in {
+  animation: fadeIn ease 7s;
+  -webkit-animation: fadeIn ease 7s;
+  -moz-animation: fadeIn ease 7s;
+  -o-animation: fadeIn ease 7s;
+  -ms-animation: fadeIn ease 7s;
+}
+@keyframes fadeIn {
+  0% { 
+  opacity:0;
+  -webkit-filter: blur(0px);}
+50% { -webkit-filter: blur(5px);}
+100% { 
+opacity:1;
+-webkit-filter: blur(0px);}
+}
+
+@-moz-keyframes fadeIn {
+  0% { 
+  opacity:0;
+  -webkit-filter: blur(0px);}
+50% { -webkit-filter: blur(5px);}
+100% { 
+opacity:1;
+-webkit-filter: blur(0px);}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+  opacity:0;
+   -webkit-filter: blur(0px);}
+50% { -webkit-filter: blur(5px);}
+100% { 
+opacity:1;
+-webkit-filter: blur(0px);}
+}
+
+@-o-keyframes fadeIn {
+  0% { 
+  opacity:0;
+  -webkit-filter: blur(0px);}
+50% { -webkit-filter: blur(5px);}
+100% { 
+opacity:1;
+-webkit-filter: blur(0px);}
+}
+
+@-ms-keyframes fadeIn {
+  0% { 
+  opacity:0;
+  -webkit-filter: blur(0px);}
+50% { -webkit-filter: blur(5px);}
+100% { opacity:1;
+-webkit-filter: blur(0px);}
+}
+
+.fade-in2 {
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+.fade-in3 {
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}
+.fade-in4 {
+  animation: fadeIn ease 4s;
+  -webkit-animation: fadeIn ease 4s;
+  -moz-animation: fadeIn ease 4s;
+  -o-animation: fadeIn ease 4s;
+  -ms-animation: fadeIn ease 4s;
+}
+.fade-in5 {
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+}
+.fade-in6 {
+  animation: fadeIn ease 6s;
+  -webkit-animation: fadeIn ease 6s;
+  -moz-animation: fadeIn ease 6s;
+  -o-animation: fadeIn ease 6s;
+  -ms-animation: fadeIn ease 6s;
+}

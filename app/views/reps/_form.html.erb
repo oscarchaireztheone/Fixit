@@ -1,0 +1,37 @@
+<%= form_with(model: rep, local: true) do |form| %>
+  <% if rep.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rep.errors.count, "error") %> prohibited this rep from being saved:</h2>
+
+      <ul>
+        <% rep.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :working %>
+    <%= form.check_box :working %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pnum %>
+    <%= form.text_field :pnum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :provider %>
+    <%= form.text_field :provider %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Calls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Pnum</th>
+      <th>Address</th>
+      <th>Model</th>
+      <th>Serial</th>
+      <th>Callsid</th>
+      <th>Appdate</th>
+      <th>Symptom</th>
+      <th>Picture</th>
+      <th>Payid</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @calls.each do |call| %>
+      <tr>
+        <td><%= call.name %></td>
+        <td><%= call.pnum %></td>
+        <td><%= call.address %></td>
+        <td><%= call.model %></td>
+        <td><%= call.serial %></td>
+        <td><%= call.callsid %></td>
+        <td><%= call.appdate %></td>
+        <td><%= call.symptom %></td>
+        <td><%= call.picture %></td>
+        <td><%= call.payid %></td>
+        <td><%= call.status %></td>
+        <td><%= link_to 'Show', call %></td>
+        <td><%= link_to 'Edit', edit_call_path(call) %></td>
+        <td><%= link_to 'Destroy', call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Call', new_call_path %>

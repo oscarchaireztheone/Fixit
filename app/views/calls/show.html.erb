@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @call.name %>
+</p>
+
+<p>
+  <strong>Pnum:</strong>
+  <%= @call.pnum %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @call.address %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @call.model %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @call.serial %>
+</p>
+
+<p>
+  <strong>Callsid:</strong>
+  <%= @call.callsid %>
+</p>
+
+<p>
+  <strong>Appdate:</strong>
+  <%= @call.appdate %>
+</p>
+
+<p>
+  <strong>Symptom:</strong>
+  <%= @call.symptom %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @call.picture %>
+</p>
+
+<p>
+  <strong>Payid:</strong>
+  <%= @call.payid %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @call.status %>
+</p>
+
+<%= link_to 'Edit', edit_call_path(@call) %> |
+<%= link_to 'Back', calls_path %>

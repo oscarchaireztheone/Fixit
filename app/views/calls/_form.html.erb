@@ -1,0 +1,72 @@
+<%= form_with(model: call, local: true) do |form| %>
+  <% if call.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(call.errors.count, "error") %> prohibited this call from being saved:</h2>
+
+      <ul>
+        <% call.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pnum %>
+    <%= form.text_field :pnum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serial %>
+    <%= form.text_field :serial %>
+  </div>
+
+  <div class="field">
+    <%= form.label :callsid %>
+    <%= form.text_field :callsid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :appdate %>
+    <%= form.text_field :appdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :symptom %>
+    <%= form.text_field :symptom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payid %>
+    <%= form.text_field :payid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

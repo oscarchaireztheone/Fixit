@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @web_call.name %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @web_call.zipcode %>
+</p>
+
+<p>
+  <strong>Appliance:</strong>
+  <%= @web_call.Appliance %>
+</p>
+
+<p>
+  <strong>Asap:</strong>
+  <%= @web_call.asap %>
+</p>
+
+<p>
+  <strong>Timestart:</strong>
+  <%= @web_call.timestart %>
+</p>
+
+<p>
+  <strong>Timeend:</strong>
+  <%= @web_call.timeend %>
+</p>
+
+<p>
+  <strong>Closed:</strong>
+  <%= @web_call.closed %>
+</p>
+
+<%= link_to 'Edit', edit_web_call_path(@web_call) %> |
+<%= link_to 'Back', web_calls_path %>

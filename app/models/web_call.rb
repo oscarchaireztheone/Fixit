@@ -1,0 +1,2 @@
+class WebCall < ApplicationRecord
+end

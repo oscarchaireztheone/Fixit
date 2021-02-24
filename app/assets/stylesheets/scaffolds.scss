@@ -1,0 +1,175 @@
+
+ #header h1{
+    margin:0px;
+}
+
+
+
+
+html {
+margin:0;
+padding:0; }
+
+body {
+  background-color: white;
+  color: #333;
+  margin: 0px; 
+  padding: 0px; }
+
+body, p, ol, ul, td {
+  font-family: 'B612', sans-serif;
+  font-size: 13px;
+  line-height: 16px; }
+
+.content {
+  font-family: 'B612', sans-serif;
+  font-size: 1.5em;
+  line-height: 150%;
+}
+
+
+.me {
+  width: 100%;
+  height: 20%;   
+  top: 35%;
+  margin-left: auto;
+  margin-right: auto;
+
+  
+  p {
+  text-align: center;
+
+  }
+
+}
+
+.textme {
+backdrop-filter: blur(5px);
+
+@media only screen and (max-width: 380px) {
+img {
+
+  height: 30px;
+  width: 30px;
+ 
+}
+  
+}
+
+margin-left: auto;
+margin-right: auto;
+line-height:1em;
+color: black; 
+font-size: 2em;
+
+
+}
+
+.art {
+
+  height: 50px;
+  width: 50px;
+ 
+}
+
+
+.frontdoor {
+  background-image: url('/assets/frontDoor-sunshine-how-can-we-help-68c4905e3e2bf9b2314dabf084318b9aa722ba43e3022475d646bf4ee5b97feb.png');
+   background-size: cover;
+ background-repeat: no-repeat;
+}
+
+#footer {
+  background-color: white;
+  border-top-style: solid;
+  border-width: 2px;
+  border-color: red;
+  padding-bottom: 5px;
+ 
+  a {
+  color: blue;
+  }
+  button {
+  color: blue;
+  }
+  
+}
+
+.legend {
+  font-size: 15px;
+  line-height: 150%;
+   li{
+  margin: 10px 0;
+  }
+}
+#title {
+  
+  border-right-style: solid;
+  border-bottom-style: solid;
+  color: white; 
+  font-family: 'Libre Baskerville', serif;
+  background-color: red;
+  border-width: thick;
+  border-color: blue;
+   border-radius: 5px;
+ 
+  }
+
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+
+a {
+  color: black; }
+button {
+a:visited {
+  color: black; }
+  }
+
+#talkToTechButton {
+  background-color: inherit;
+  border-width: 0px;
+}
+
+th {
+  padding-bottom: 5px; }
+
+td {
+  padding: 0 5px 7px; }
+
+div.field,
+div.actions {
+  margin-bottom: 10px; }
+
+#notice {
+  color: green; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff; }
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square; }
+
+label {
+  display: block; }

@@ -1,0 +1,155 @@
+
+<div class="container-fluid px-0 ">
+
+	<strong id="notice" class="alert-heading"><%= notice %></strong>
+
+	<div class="card border-0">
+ 		 
+  		<%= image_tag("frontDoor-sunshine-how-can-we-help.png", class: "card-img w-100", alt: "how can we help fix your appliance") %>
+
+		<div class="card-img-overlay me">		
+			<p class=" textme" >How can we help?
+      </br>
+				<%= image_tag("fridge2.svg", class: " art", alt: " nothign") %>
+				<%= image_tag("wash.svg", class: "art ", alt: " nothign") %>
+				<%= image_tag("dry.svg", class: " art", alt: " nothign") %>
+				<%= image_tag("stove.svg", class: " art", alt: " nothign") %>
+				<%= image_tag("dish.svg", class: "art", alt: " nothign") %>
+        <%= image_tag("microwave.svg", class: "d-sm-inline d-none art", alt: " nothign") %>
+				</p>		
+		</div>
+
+	</div>
+	<div class="pb-5">
+		<div class="row py-1  ">
+			<div class="col-md-3 pt-3  ">
+				<div class="card h-100 ">
+				  <div class="card-body d-flex flex-column ">
+				    <h5 class="card-title ">Call Now</h5>
+				    <p class="card-text">Number Of technicians currentaly waiting to take yaour call <%= @working %></p>
+				    <button type="button" class="btn btn-primary mt-auto" data-toggle="modal" data-target="#callNowModal">Help when you need it here</button>     
+				  </div>
+				</div>
+			</div>
+
+		  <div class="col-md-3 pt-3">
+		    <div class="card h-100">
+		      <div class="card-body d-flex flex-column">
+		        <h5 class="card-title">National Service</h5>
+		        <p class="card-text">No matter where in the country You are we are Here to help you</p>
+		        <button type="button" class="btn btn-primary mt-auto" data-toggle="modal" data-target="#nationalModal">National support for every Appliance here</button>
+		      </div>
+		    </div>
+		  </div>
+
+		  <div class="col-md-3 pt-3">
+		    <div class="card  h-100">
+		      <div class="card-body d-flex flex-column">
+		        <h5 class="card-title">Experts</h5>
+		        <p class="card-text">dont make another move till you talk to our experts, theres now telling what they know</p>
+		        <button type="button" class="btn btn-primary mt-auto" data-toggle="modal" data-target="#expertsModal">Hindsight is 2020, experts advise is here</button>     
+		      </div>
+		    </div>
+		  </div>
+
+		  <div class="col-md-3 pt-3 ">
+		    <div class="card h-100">
+		      <div class="card-body d-flex flex-column">
+		        <h5 class="card-title">Resources</h5>
+		        <p class="card-text">There is much to know and there is much on appiances right here</p>
+		        <button type="button" class="btn btn-primary mt-auto" data-toggle="modal" data-target="#resourcesModal">What Resources do we Have?</button>
+
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+	</div>
+
+		<%= render 'web_calls/form', web_call: @web_call %>
+  </div>
+
+</div>
+
+<div class="modal fade" id="callNowModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Call Now</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        some ruby code to display technicians available
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">call now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="nationalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">National</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        something about technicians in your area here
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" onclick="location.href='<%= nearme_path %>';" class="btn btn-primary">Find tech in your area</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="expertsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Experts</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Something about our technicains and making an appintment
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#exampleModal" class="btn btn-primary">Schedule call</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="resourcesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Resources</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Something about resources here
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='<%= article_path %>';">view stuff</button>
+      </div>
+    </div>
+  </div>
+</div>
