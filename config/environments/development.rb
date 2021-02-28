@@ -6,6 +6,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
 # this line of code set a regular expression as the format for acceptable host
 config.hosts << /[a-z0-9]+\.ngrok\.io/
+config.hosts << "appliance2020.com"
   # config.hosts << "e1b752d2d61a.ngrok.io"
 
 
