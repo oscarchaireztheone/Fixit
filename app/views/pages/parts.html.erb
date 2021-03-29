@@ -1,7 +1,7 @@
 
 <div class="container  content">
 	<div class="row">
-		<%= image_tag("banner-appliance-parts", class:"img-fluid pb-3", alt: "Warranty fineprint look close") %>
+		<%= image_pack_tag("banner-appliance-parts.png", class:"img-fluid pb-3 w-100", alt: "Warranty fineprint look close") %>
 
 	</div>
 	<div class="row " id="title">
@@ -68,7 +68,7 @@ When it comes to appliance part’s prices, installation, and availability it is
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3"><%= image_tag("red-cross-hospital.png", class: "img-fluid img-thumbnail", alt: "red background with white medical cross ") %>
+				<div class="col-3"><%= image_pack_tag("red-cross-hospital.png", class: "img-fluid img-thumbnail", alt: "red background with white medical cross ") %>
 				</div>
 				<div class="col-9">
 					<div class="card-body">
@@ -101,7 +101,7 @@ In summary, on the question of “should I repair or replace an appliance part,�
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3"><%= image_tag("home-repair-applinace-fix.png", class: "img-fluid img-thumbnail", alt: "Home improvments, home warranty come on top of calculator") %>
+				<div class="col-3"><%= image_pack_tag("home-repair-applinace-fix.png", class: "img-fluid img-thumbnail", alt: "Home improvments, home warranty come on top of calculator") %>
 				</div>
 				<div class="col-9">
 					<div class="card-body">
@@ -169,6 +169,13 @@ Manufacturers are required to make parts but only for a certain amount of time. 
 				
 				</div>
 			</div>
+
+			
+	 <div class="alert alert-success py-5" role="alert">
+
+      <a href="<%= article_path %>">More informative resources</a>
+
+      </div>
 
 </div>
 <%= render 'web_calls/form', web_call: @web_call %>

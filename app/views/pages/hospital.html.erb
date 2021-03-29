@@ -1,7 +1,7 @@
 
 <div class="container  content">
 	<div class="row">
-		<%= image_tag("banner-red-cross-appliance-hospital", class:"img-fluid pb-3", alt: "Warranty fineprint look close") %>
+		<%= image_pack_tag("banner-red-cross-appliance-hospital.png", class:"img-fluid pb-3 w-100", alt: "Warranty fineprint look close") %>
 
 	</div>
 	<div class="row " id="title">
@@ -49,7 +49,7 @@ You wake up one day and decided to run the dishwasher with the dishes from the n
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3"><%= image_tag("drain-pump-dishwasher", class: "img-fluid img-thumbnail", alt: "Drain pump Repair Waser appliance parts") %>
+				<div class="col-3"><%= image_pack_tag("drain-pump-dishwasher.png", class: "img-fluid img-thumbnail", alt: "Drain pump Repair Waser appliance parts") %>
 				</div>
 				<div class="col-9">
 					<div class="card-body">
@@ -75,7 +75,7 @@ You wake up one day and decided to run the dishwasher with the dishes from the n
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3"><%= image_tag("warranty-cost-worth-it.png", class: "img-fluid img-thumbnail", alt: "radiant heating elment appliance part for stove") %>
+				<div class="col-3"><%= image_pack_tag("warranty-cost-worth-it.png", class: "img-fluid img-thumbnail", alt: "radiant heating elment appliance part for stove") %>
 				</div>
 				<div class="col-9">
 					<div class="card-body">
@@ -95,9 +95,14 @@ You wake up one day and decided to run the dishwasher with the dishes from the n
 	so when your appliance is sick and needs a doctor or a hospital to go to. Search the internet for appliance hospitals near you or simply search for appliance repair for more direct results. Got to a repair shop with a good reputation and inform yourself on what the possible cost you may incur with your broken appliance. 
 				
 			</div>
-
-			
 	</div>
+
+	
+	 <div class="alert alert-success py-5" role="alert">
+
+      <a href="<%= article_path %>">More informative resources</a>
+
+      </div>
 
 </div>
 <%= render 'web_calls/form', web_call: @web_call %>

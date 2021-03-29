@@ -1,13 +1,12 @@
 
 
 
-	
-<h1> best </h1>
+
 
 
 <div class="container  content">
 	<div class="row">
-		<%= image_tag("banner-red-cross-appliance-hospital", class:"img-fluid pb-3", alt: "Warranty fineprint look close") %>
+		<%= image_pack_tag("classic-car.png", class:"img-fluid pb-3 w-100", alt: "Warranty fineprint look close") %>
 
 	</div>
 	<div class="row " id="title">
@@ -61,7 +60,7 @@ Hindsight is 2020, often times after spending a couple hundred dollars do you fi
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3"><%= image_tag("drain-pump-dishwasher", class: "img-fluid img-thumbnail", alt: "Drain pump Repair Waser appliance parts") %>
+				<div class="col-3"><%= image_pack_tag("drain-pump-dishwasher.png", class: "img-fluid img-thumbnail", alt: "Drain pump Repair Waser appliance parts") %>
 				</div>
 				<div class="col-9">
 					<div class="card-body">
@@ -97,7 +96,7 @@ If this is a DIY then consider how inconvenienced you will be if you can’t get
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3"><%= image_tag("warranty-cost-worth-it.png", class: "img-fluid img-thumbnail", alt: "radiant heating elment appliance part for stove") %>
+				<div class="col-3"><%= image_pack_tag("warranty-cost-worth-it.png", class: "img-fluid img-thumbnail", alt: "radiant heating elment appliance part for stove") %>
 				</div>
 				<div class="col-9">
 					<div class="card-body">
@@ -132,6 +131,12 @@ Parts pricing can often have more questions than answers. For example should you
 
 			
 	</div>
+
+	 <div class="alert alert-success py-5" role="alert">
+
+      <a href="<%= article_path %>">More informative resources</a>
+
+      </div>
 
 </div>
 <%= render 'web_calls/form', web_call: @web_call %>

@@ -1,7 +1,7 @@
 
 <div class="container  content">
 	<div class="row">
-		<%= image_tag("warranty-fineprint", class:"img-fluid pb-3", alt: "Warranty fineprint look close") %>
+		<%= image_pack_tag("warranty-fineprint.png", class:"img-fluid pb-3 w-100", alt: "Warranty fineprint look close") %>
 
 	</div>
 	<div class="row " id="title">
@@ -58,7 +58,7 @@ Before you add an extended warranty with your new appliance ask your-self these 
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3"><%= image_tag("red-cross-hospital.png", class: "img-fluid img-thumbnail", alt: "red background with white medical cross ") %>
+				<div class="col-3"><%= image_pack_tag("red-cross-hospital.png", class: "img-fluid img-thumbnail", alt: "red background with white medical cross ") %>
 				</div>
 				<div class="col-9">
 					<div class="card-body">
@@ -84,7 +84,7 @@ Before you add an extended warranty with your new appliance ask your-self these 
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3"><%= image_tag("stove-applinace-knob-repair.png", class: "img-fluid img-thumbnail", alt: "control bar of stove or range knobs") %>
+				<div class="col-3"><%= image_pack_tag("stove-applinace-knob-repair.png", class: "img-fluid img-thumbnail", alt: "control bar of stove or range knobs") %>
 				</div>
 				<div class="col-9">
 					<div class="card-body">
@@ -122,6 +122,11 @@ Before you add an extended warranty with your new appliance ask your-self these 
 				</div>
 			</div>
 
+			 <div class="alert alert-success py-5" role="alert">
+
+      <a href="<%= article_path %>">More informative resources</a>
+
+      </div>
 </div>
 <%= render 'web_calls/form', web_call: @web_call %>
 

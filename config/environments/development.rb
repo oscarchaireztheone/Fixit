@@ -57,9 +57,9 @@ config.hosts << "appliance2020.com"
 
 
   #added this to make the prcompile error go away OSCAR
-  config.assets.check_precompiled_asset = false
-
-  config.assets.debug = true
+  #config.assets.check_precompiled_asset = false
+  
+  config.assets.debug = false
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
