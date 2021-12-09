@@ -9,7 +9,7 @@ class TwilioController < ApplicationController
    if num != nil
 
   	response = Twilio::TwiML::VoiceResponse.new do |r|
-  		  r.say(message: ' greeting message', voice: 'alice')
+  		  r.say(message: 'Please wait for the call to be to the next avialble Technician', voice: 'alice')
   		  r.dial(caller_id: '+15037828100') do |dial|
   		  	dial.number(num.pnum)
   		  end
