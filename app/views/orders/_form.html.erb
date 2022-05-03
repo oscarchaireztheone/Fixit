@@ -1,0 +1,122 @@
+<%= form_with(model: [@customer, order], local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.text_field :customer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serial %>
+    <%= form.text_field :serial %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div class="field">
+    <%= form.label :callsid %>
+    <%= form.text_field :callsid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :symptom %>
+    <%= form.text_area :symptom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agent_id %>
+    <%= form.text_field :agent_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other %>
+    <%= form.text_field :other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :window %>
+    <%= form.text_field :window %>
+  </div>
+
+  <div class="field">
+    <%= form.label :technician_id %>
+    <%= form.text_field :technician_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.date_field :day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other %>
+    <%= form.text_field :other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :invoiceNumber %>
+    <%= form.text_field :invoiceNumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :invoicetype %>
+    <%= form.text_field :invoicetype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :laborCode %>
+    <%= form.text_field :laborCode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :part %>
+    <%= form.text_field :part %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amtDue %>
+    <%= form.text_field :amtDue %>
+  </div>
+
+  <div class="field">
+    <%= form.label :taxAmt %>
+    <%= form.text_field :taxAmt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other %>
+    <%= form.text_field :other %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

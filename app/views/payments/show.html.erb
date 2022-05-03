@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Orde:</strong>
+  <%= @payment.order_id %>
+</p>
+
+<p>
+  <strong>Payee:</strong>
+  <%= @payment.payee %>
+</p>
+
+<p>
+  <strong>Method:</strong>
+  <%= @payment.meth %>
+</p>
+
+<p>
+  <strong>Idnum:</strong>
+  <%= @payment.idNum %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @payment.amount %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @payment.other %>
+</p>
+<h2>Recepits for this order</h2>
+<% for r in @payment.receipts %>
+  <ul>
+    <li><%= r.recipient %></li>
+    <li><%= link_to 'show Recipt', payment_receipt_path(@payment, r) %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Edit', edit_order_payment_path(@order, @payment) %> |
+<%= link_to 'Add recipt', payment_receipts_path(@payment) %>
+<%= link_to 'Back', order_payments_path(@order) %>

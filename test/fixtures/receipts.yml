@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment: one
+  recipient: MyString
+  deliveryway: MyString
+  address: MyString
+  summary: MyString
+  other: MyString
+
+two:
+  payment: two
+  recipient: MyString
+  deliveryway: MyString
+  address: MyString
+  summary: MyString
+  other: MyString

@@ -5,7 +5,9 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
 # this line of code set a regular expression as the format for acceptable host
-config.hosts << /[a-z0-9]+\.ngrok\.io/
+config.hosts << /[a-z0-9-]+\.ngrok\.io/
+#uncomment the line below if issues occur
+#config.hosts << "b59f-2601-1c0-5e00-fb0-d41c-4392-dba9-a7d.ngrok.io"
 config.hosts << "appliance2020.com"
   # config.hosts << "e1b752d2d61a.ngrok.io"
 
@@ -70,4 +72,15 @@ config.hosts << "appliance2020.com"
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'gmail.com',
+  user_name:            ENV["GMAILUN"],
+  password:             ENV["GMAILPW"],
+  authentication:       'plain',
+  open_timeout:         5,
+  read_timeout:         5 }
 end

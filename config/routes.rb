@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :agents
+  resources :technicians
+  resources :receipts
+  resources :payments
+  resources :orders
+  resources :customers
   resources :web_calls
   get 'twilio/voice'
   resources :calls

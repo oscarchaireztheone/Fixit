@@ -1,0 +1,118 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @order.customer_id %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @order.model %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @order.serial %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @order.brand %>
+</p>
+
+<p>
+  <strong>Callsid:</strong>
+  <%= @order.callsid %>
+</p>
+
+<p>
+  <strong>Symptom:</strong>
+  <%= @order.symptom %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Agent:</strong>
+  <%= @order.agent_id %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @order.other %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @order.address %>
+</p>
+
+<p>
+  <strong>Window:</strong>
+  <%= @order.window %>
+</p>
+
+<p>
+  <strong>Technician:</strong>
+  <%= @order.technician_id %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @order.day %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @order.other %>
+</p>
+
+<p>
+  <strong>Invoicenumber:</strong>
+  <%= @order.invoiceNumber %>
+</p>
+
+<p>
+  <strong>Invoicetype:</strong>
+  <%= @order.invoicetype %>
+</p>
+
+<p>
+  <strong>Laborcode:</strong>
+  <%= @order.laborCode %>
+</p>
+
+<p>
+  <strong>Part:</strong>
+  <%= @order.part %>
+</p>
+
+<p>
+  <strong>Amtdue:</strong>
+  <%= @order.amtDue %>
+</p>
+
+<p>
+  <strong>Taxamt:</strong>
+  <%= @order.taxAmt %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @order.other %>
+</p>
+
+<h2>Payments for this order</h2>
+<% for payment in @order.payments %>
+  <ul>
+    <li><%= payment.payee %></li>
+    <li><%= link_to 'show Payment', order_payment_path(@order, payment) %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Edit', edit_customer_order_path(@customer,@order) %> |
+<%= link_to 'Add Payment', order_payments_path(@order) %>
+<%= link_to 'Back', customer_orders_path(@customer) %>

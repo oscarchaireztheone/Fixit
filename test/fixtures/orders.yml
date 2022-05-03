@@ -1,0 +1,47 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: one
+  model: MyString
+  serial: MyString
+  brand: MyString
+  callsid: MyString
+  symptom: MyText
+  status: 1
+  agent: one
+  other: MyString
+  address: MyString
+  window: MyString
+  technician: one
+  day: MyString
+  other: MyString
+  invoiceNumber: MyString
+  invoicetype: MyString
+  laborCharge: MyString
+  part: MyString
+  amtDue: 9.99
+  taxAmt: 9.99
+  other: MyString
+
+two:
+  customer: two
+  model: MyString
+  serial: MyString
+  brand: MyString
+  callsid: MyString
+  symptom: MyText
+  status: 1
+  agent: two
+  other: MyString
+  address: MyString
+  window: MyString
+  technician: two
+  day: MyString
+  other: MyString
+  invoiceNumber: MyString
+  invoicetype: MyString
+  laborCharge: MyString
+  part: MyString
+  amtDue: 9.99
+  taxAmt: 9.99
+  other: MyString

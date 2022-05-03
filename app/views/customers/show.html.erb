@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Phone1:</strong>
+  <%= @customer.phone1 %>
+</p>
+
+<p>
+  <strong>Phone2:</strong>
+  <%= @customer.phone2 %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @customer.address %>
+</p>
+
+<h2>Orders for this customer</h2>
+<% for order in @customer.orders %>
+  <ul>
+    <li><%= order.model %></li>
+    <li><%= link_to 'show Order', customer_order_path(@customer, order) %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to'Create Servicee Order', customer_orders_path(@customer) %> |
+<%= link_to 'Back', customers_path %>
