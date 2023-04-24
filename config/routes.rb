@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+
+  resources :samsungcalls do
+  collection do
+    match 'api', to: 'samsungcalls#api', via: [:get, :post, :put, :patch, :delete]
+  end
+end
   resources :agents
   resources :technicians
   resources :payments do 

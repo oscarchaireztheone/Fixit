@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fourk: MyString
+  name: MyString
+  phone1: MyString
+  phone2: MyString
+  email: MyString
+  address: MyString
+  zipcode: MyString
+  hass: false
+  status: 1
+  note: MyString
+  flag: 1
+
+two:
+  fourk: MyString
+  name: MyString
+  phone1: MyString
+  phone2: MyString
+  email: MyString
+  address: MyString
+  zipcode: MyString
+  hass: false
+  status: 1
+  note: MyString
+  flag: 1

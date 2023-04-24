@@ -5,7 +5,7 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
 # this line of code set a regular expression as the format for acceptable host
-config.hosts << /[a-z0-9-]+\.ngrok\.io/
+config.hosts << /[a-z0-9-]+\.ngrok-free\.app/
 #uncomment the line below if issues occur
 #config.hosts << "b59f-2601-1c0-5e00-fb0-d41c-4392-dba9-a7d.ngrok.io"
 config.hosts << "appliance2020.com"

@@ -1,0 +1,2 @@
+class Samsungcall < ApplicationRecord
+end
