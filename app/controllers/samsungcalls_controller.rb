@@ -68,8 +68,13 @@ class SamsungcallsController < ApplicationController
       format.json {
         case request.method_symbol
         when :get
+        if params[:id]
+          @samsungcall = Samsungcall.find(params[:id])
+          render json: @samsungcall
+        else
           @samsungcalls = Samsungcall.all
           render json: @samsungcalls
+        end
         when :post
           @samsungcall = Samsungcall.new(samsungcall_params)
           if @samsungcall.save
