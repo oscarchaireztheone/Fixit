@@ -1,0 +1,118 @@
+// Place all the styles related to the ApiHtmle controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#note-icon {
+  position: fixed;
+  bottom: 70px;
+  right: 30px;
+  font-size: 2em;  /* You can adjust the size of the icon here */
+  cursor: pointer;
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 20;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  position: relative;    //added this
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#note-form {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+#note-form-modal {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+#modal-content {
+  position: relative; /* Ensures the absolute positioning of the icons is relative to this div */
+}
+
+.icons {
+  display: flex; /* Aligns the icons horizontally */
+  position: absolute; /* Takes the div out of the normal flow */
+  top: 0; /* Positions the div at the top of the parent div */
+  right: 0; /* Positions the div at the right of the parent div */
+}
+.note.even-status {
+  background-color: red;
+}
+
+.note.odd-status {
+  background-color: lightgreen;
+}
+
+#redbutton {
+  background-image: red;
+}
+
+.buttons {
+  position: absolute; /* Position the buttons relative to the .modal-content */
+  bottom: 10px; /* Add some space from the bottom edge */
+  right: 10px; /* Add some space from the right edge */
+
+}
+
+.modal-button {
+  margin-left: 10px; /* Add some space between the buttons */
+}
+/* CSS for the slot row */
+.slot-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* CSS for the slot radio button */
+.slot-radio {
+  margin-right: 10px;
+}
+
+/* CSS for the slot details */
+.slot-details {
+  margin-right: 10px;
+}
+

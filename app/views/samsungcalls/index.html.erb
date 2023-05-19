@@ -1,5 +1,8 @@
-<p id="notice"><%= notice %></p>
 
+<p id="notice"><%= notice %></p>
+<% content_for :javascript_packs do %>
+  <%= javascript_pack_tag 'samsungcalls.js' %>
+<% end %>
 <h1>Samsungcalls</h1>
 
 <table>
@@ -12,6 +15,7 @@
       <th>Email</th>
       <th>Address</th>
       <th>Zipcode</th>
+      <th>Day</th>
       <th>Hass</th>
       <th>Status</th>
       <th>Note</th>
@@ -24,19 +28,27 @@
     <% @samsungcalls.each do |samsungcall| %>
       <tr>
         <td><%= samsungcall.fourk %></td>
-        <td><%= samsungcall.name %></td>
+        <td id=<%=  samsungcall.id %>><%= samsungcall.name %></td>
         <td><%= samsungcall.phone1 %></td>
         <td><%= samsungcall.phone2 %></td>
         <td><%= samsungcall.email %></td>
         <td><%= samsungcall.address %></td>
         <td><%= samsungcall.zipcode %></td>
+        <td>
+          <% if samsungcall.day.nil? %>
+            No appointment
+          <% else %>
+            <%= samsungcall.day.date %>
+          <% end %>
+        </td>
         <td><%= samsungcall.hass %></td>
-        <td><%= samsungcall.status %></td>
+        <td class='status'><%= samsungcall.status %></td>
         <td><%= samsungcall.note %></td>
         <td><%= samsungcall.flag %></td>
         <td><%= link_to 'Show', samsungcall %></td>
         <td><%= link_to 'Edit', edit_samsungcall_path(samsungcall) %></td>
         <td><%= link_to 'Destroy', samsungcall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button class="auto-schedule" data-value="<%= samsungcall.id %>"type="button">Send Auto App</button></td>
       </tr>
     <% end %>
   </tbody>
@@ -45,3 +57,5 @@
 <br>
 
 <%= link_to 'New Samsungcall', new_samsungcall_path %>
+<h2><i id="note-icon" class="bi bi-journal-plus"></i></h2>
+<%= link_to "Logout", destroy_crew_session_path, method: :delete %>

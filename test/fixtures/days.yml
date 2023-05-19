@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2023-04-30
+  tech_id: 1
+  status: MyString
+  slot1: 1
+  slot2: 1
+  slot3: 1
+  slot4: 1
+  slot5: 1
+  slot6: 1
+  slot7: 1
+  slot8: 1
+
+two:
+  date: 2023-04-30
+  tech_id: 1
+  status: MyString
+  slot1: 1
+  slot2: 1
+  slot3: 1
+  slot4: 1
+  slot5: 1
+  slot6: 1
+  slot7: 1
+  slot8: 1

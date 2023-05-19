@@ -34,6 +34,14 @@
   <strong>Zipcode:</strong>
   <%= @samsungcall.zipcode %>
 </p>
+<p>
+  <strong>Day:</strong>
+  <% if @samsungcall.day.nil? %>
+     No appointment
+  <% else %>
+    <%= @samsungcall.day.date %>
+  <% end %>
+</p>
 
 <p>
   <strong>Hass:</strong>
@@ -57,3 +65,5 @@
 
 <%= link_to 'Edit', edit_samsungcall_path(@samsungcall) %> |
 <%= link_to 'Back', samsungcalls_path %>
+
+

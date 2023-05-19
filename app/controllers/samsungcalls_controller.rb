@@ -1,10 +1,20 @@
+
 class SamsungcallsController < ApplicationController
+  include TwilioActionsHelper
   skip_before_action :verify_authenticity_token, only: [:api]
+  before_action :authenticate_token, only: [:api]
   before_action :set_samsungcall, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_crew!, except: [:api] #devise helper
+  before_action :set_user_id, except: [:api]
+
+
+  API_BASE_URL = ENV["API_BASE_URL"]
+
 
   # GET /samsungcalls
   # GET /samsungcalls.json
   def index
+    
     @samsungcalls = Samsungcall.all
   end
 
@@ -106,6 +116,6 @@ class SamsungcallsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def samsungcall_params
-      params.require(:samsungcall).permit(:fourk, :name, :phone1, :phone2, :email, :address, :zipcode, :hass, :status, :note, :flag)
+      params.require(:samsungcall).permit(:fourk, :name, :phone1, :phone2, :email, :address, :zipcode, :hass, :status, :note, :flag, :day_id)
     end
 end

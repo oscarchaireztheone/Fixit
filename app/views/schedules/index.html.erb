@@ -1,0 +1,20 @@
+<% content_for :javascript_packs do %>
+  <%= javascript_pack_tag 'schedules' %>
+<% end %>
+  <h1>Schedules</h1>
+
+  <div>
+    <h2>Available Slots</h2>
+    <button id="fetch-available-slots">Fetch Available Slots</button>
+    <ul id="available-slots-list"></ul>
+  </div>
+
+  <div>
+    <h2>Days by Proximity</h2>
+    <label for="zipcode-input">Enter ZIP Code:</label>
+    <input type="text" id="zipcode-input">
+    <button id="fetch-days-by-proximity">Fetch Days by Proximity</button>
+    <ul id="days-by-proximity-list"></ul>
+  </div>
+<div>
+  <h2><i id="note-icon" class="bi bi-journal-plus"></i></h2>

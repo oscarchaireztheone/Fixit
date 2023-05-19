@@ -13,7 +13,7 @@ class TwilioController < ApplicationController
 
     response = Twilio::TwiML::VoiceResponse.new do |r|
         r.say(message: 'please wait', voice: 'alice')
-        r.dial(caller_id: '+15037828100') do |dial|
+        r.dial(caller_id: ENV['TWILIO_PHONE_NUMBER']) do |dial|
           dial.number(num.phone)
         end
       end

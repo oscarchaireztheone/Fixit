@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_23_220430) do
+ActiveRecord::Schema.define(version: 2023_05_17_042437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.string "author_type"
+    t.bigint "author_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
 
   create_table "agents", force: :cascade do |t|
     t.string "name"
@@ -42,12 +68,53 @@ ActiveRecord::Schema.define(version: 2023_04_23_220430) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "crews", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "assignable_type", null: false
+    t.bigint "assignable_id", null: false
+    t.string "auth_token"
+    t.index ["assignable_type", "assignable_id"], name: "index_crews_on_assignable_type_and_assignable_id"
+    t.index ["email"], name: "index_crews_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_crews_on_reset_password_token", unique: true
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "phone1"
     t.string "phone2"
     t.string "email"
     t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "days", force: :cascade do |t|
+    t.date "date"
+    t.integer "tech_id"
+    t.string "status"
+    t.integer "slot1"
+    t.integer "slot2"
+    t.integer "slot3"
+    t.integer "slot4"
+    t.integer "slot5"
+    t.integer "slot6"
+    t.integer "slot7"
+    t.integer "slot8"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.text "note_content"
+    t.string "phone_number", null: false
+    t.integer "call_id"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -126,6 +193,8 @@ ActiveRecord::Schema.define(version: 2023_04_23_220430) do
     t.integer "flag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "day_id"
+    t.index ["day_id"], name: "index_samsungcalls_on_day_id"
   end
 
   create_table "technicians", force: :cascade do |t|
@@ -136,6 +205,7 @@ ActiveRecord::Schema.define(version: 2023_04_23_220430) do
     t.string "other"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "working"
   end
 
   create_table "web_calls", force: :cascade do |t|
@@ -155,4 +225,5 @@ ActiveRecord::Schema.define(version: 2023_04_23_220430) do
   add_foreign_key "orders", "technicians"
   add_foreign_key "payments", "orders"
   add_foreign_key "receipts", "payments"
+  add_foreign_key "samsungcalls", "days"
 end

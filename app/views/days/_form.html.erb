@@ -1,0 +1,72 @@
+<%= form_with(model: day, local: true) do |form| %>
+  <% if day.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(day.errors.count, "error") %> prohibited this day from being saved:</h2>
+
+      <ul>
+        <% day.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tech_id %>
+    <%= form.number_field :tech_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slot1 %>
+    <%= form.number_field :slot1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slot2 %>
+    <%= form.number_field :slot2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slot3 %>
+    <%= form.number_field :slot3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slot4 %>
+    <%= form.number_field :slot4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slot5 %>
+    <%= form.number_field :slot5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slot6 %>
+    <%= form.number_field :slot6 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slot7 %>
+    <%= form.number_field :slot7 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slot8 %>
+    <%= form.number_field :slot8 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

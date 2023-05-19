@@ -9,8 +9,9 @@ config.hosts << /[a-z0-9-]+\.ngrok-free\.app/
 #uncomment the line below if issues occur
 #config.hosts << "b59f-2601-1c0-5e00-fb0-d41c-4392-dba9-a7d.ngrok.io"
 config.hosts << "appliance2020.com"
+config.web_console.whitelisted_ips = %w(0.0.0.0/0 ::/0)
   # config.hosts << "e1b752d2d61a.ngrok.io"
-
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.cache_classes = false
 
@@ -65,6 +66,7 @@ config.hosts << "appliance2020.com"
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+  config.log_level = :debug
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true

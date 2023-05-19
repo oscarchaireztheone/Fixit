@@ -1,7 +1,34 @@
+
 class ApplicationController < ActionController::Base
-	def working
-		list = Rep.where(:working => true)
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def working
+    list = Rep.where(:working => true)
     @working = list.count
 
-	end
+  end
+  rescue_from ActionController::RoutingError, with: :render_not_found
+
+  def render_not_found
+      render template: 'errors/not_found', status: :not_found
+  end
+  protected
+
+  def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up) do |crews_params|
+      crews_params.permit(:email)
+    end
+  end
+
+  def set_user_id
+    crew = current_crew ? current_crew : nil #returns the crew object or ni
+    @crew = crew.assignable
+  end
+  def authenticate_token
+    authenticate_or_request_with_http_token do |token|
+      Rails.logger.warn("token from inside the authenticat_token app")
+      Rails.logger.warn(token.inspect)
+      Crew.exists?(auth_token: token)
+    end
+  end
 end

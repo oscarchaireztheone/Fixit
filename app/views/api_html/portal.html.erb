@@ -1,0 +1,38 @@
+<% content_for :javascript_packs do %>
+  <%= javascript_pack_tag 'api_html' %>
+<% end %>
+<div class="container">
+	<h2><%= @sc.name %></h3>
+	<h4><%= @sc.address %></h2>
+</div>
+<% if !@appointment %>
+<div class="container">
+  <% @data.each do |item| %>
+    <div class="row mb-3">
+      <div class="col-4">
+        <p id="<%=item[:distance]%>">Slot: <%= friendly_slot_name("slot#{item[:slot]}") %></p>
+      </div>
+      <div class="col-4">
+        <p>Date: <%= item[:date] %></p>
+      </div>
+      <div class="col-4">
+        <input type="radio" name="selected_slot" id="<%= item[:date] %>" value="slot<%= item[:slot] %>">
+        <label for="slot-<%= item[:slot] %>-<%= item[:date] %>">Select</label>
+      </div>
+
+    </div>
+  <% end %>
+  <%= hidden_field_tag :sc, @sc.id %>
+  <button type="submit"  id="appointment-sumit-button" class="btn btn-primary">Submit</button>
+</div>
+<% else %>
+<div class="container">
+	<h4>Appointment is set for</h4>
+	<h4><%= friendly_slot_name(@appointment[:slot]) + " on" + @appointment[:date].strftime("%a, %d %b %Y") %></h4>
+	<%= hidden_field_tag :sc, @sc.id %>
+  <button type="submit"  id="portal-reschedule-button" class="btn btn-primary">Reschedule</button>
+</div>
+<% end %>
+
+
+

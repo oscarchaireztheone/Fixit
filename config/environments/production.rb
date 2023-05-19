@@ -5,6 +5,7 @@ Rails.application.configure do
   config.cache_classes = true
   #added 3/29 for the domain once in production
   config.hosts << "appliance2020.com"
+  config.action_mailer.default_url_options = { host: 'https://appliance2020.com/', port: 80 }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

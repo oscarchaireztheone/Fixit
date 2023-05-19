@@ -1,0 +1,43 @@
+<% content_for :javascript_packs do %>
+  <%= javascript_pack_tag 'dashboard' %>
+<% end %>
+<div id="crew-data" style="display:block;" 
+     data-id="<%= @crew.id %>" 
+     data-phone="<%= @crew.phone %>"
+     data-other="<%= @crew.other %>">
+</div>
+
+<div class="container">
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-turbolinks="false">
+      Choose an Action
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#" id="viewAll">View All Calls</a>
+      <a class="dropdown-item" href="#" id="viewOpen">View Open Calls</a>
+      <a class="dropdown-item" href="#" id="viewSync">View Calls Needing Sync</a>
+      <a class="dropdown-item" href="#" id="viewByTech">View Calls by Tech</a>
+      <a class="dropdown-item" href="#" id="viewNotScheduled">View Calls Not Scheduled</a>
+    </div>
+    <div class="container" id="data-container">
+    </div>
+  </div>
+</div>
+    <h2><i id="note-icon" class="bi bi-journal-plus"></i></h2>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModalButton" class="close">&times;</span>
+        <p id="modalBaseText">Some text in the Modal..</p>
+        <div class="icons">
+          <h2><i id="modalNoteIcon" class="bi bi-journal-plus"></i></h2>
+          <h2><i id="allNotestIcon" class="bi bi-stack"></i></h2>
+        </div>
+        <div class="buttons">
+          <button id="closeButton" class="redbutton">Close Call</button>
+          <button id="rescheduleButton" class="modal-button">Reschedule</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

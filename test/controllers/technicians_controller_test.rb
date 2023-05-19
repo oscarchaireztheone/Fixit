@@ -17,7 +17,7 @@ class TechniciansControllerTest < ActionDispatch::IntegrationTest
 
   test "should create technician" do
     assert_difference('Technician.count') do
-      post technicians_url, params: { technician: { email: @technician.email, employeeNum: @technician.employeeNum, name: @technician.name, other: @technician.other, phone: @technician.phone } }
+      post technicians_url, params: { technician: {working: @technician.working, email: @technician.email, employeeNum: @technician.employeeNum, name: @technician.name, other: @technician.other, phone: @technician.phone } }
     end
 
     assert_redirected_to technician_url(Technician.last)
@@ -34,7 +34,7 @@ class TechniciansControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update technician" do
-    patch technician_url(@technician), params: { technician: { email: @technician.email, employeeNum: @technician.employeeNum, name: @technician.name, other: @technician.other, phone: @technician.phone } }
+    patch technician_url(@technician), params: { technician: { working: @technician.working, email: @technician.email, employeeNum: @technician.employeeNum, name: @technician.name, other: @technician.other, phone: @technician.phone } }
     assert_redirected_to technician_url(@technician)
   end
 

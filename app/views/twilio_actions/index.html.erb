@@ -1,0 +1,59 @@
+<% content_for :javascript_packs do %>
+  <%= javascript_pack_tag 'twilio_actions' %>
+<% end %>
+
+<h1>Twilio Actions</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Phone Number</th>
+      <th>Call SID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @open_calls.each do |call| %>
+      <tr>
+        <td><%= call.to %></td>
+        <td><%= call.sid %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- app/views/open_calls/index.html.erb -->
+<button id="start-conference-btn" class="btn btn-primary">Start Conference Call</button>
+<input type="text" id="phone_to" placeholder="Enter phone number">
+<button id="connect_call" class="btn btn-primary">Connect Call</button>
+
+
+<div>
+  <h3>Send a Text Message</h3>
+  <%= form_with url: send_text_twilio_actions_path, method: :post, local: true do |form| %>
+    <div>
+      <%= form.label :to %>
+      <%= form.text_field :to %>
+    </div>
+    <div>
+      <%= form.label :body %>
+      <%= form.text_area :body %>
+    </div>
+    <div>
+      <%= form.submit "Send Text" %>
+    </div>
+  <% end %>
+</div>
+
+
+<div>
+  <h3>Disconnect Calls</h3>
+  <%= form_with url: disconnect_call_twilio_actions_path, method: :post, local: true do |form| %>
+    <div>
+      <%= form.label :call_sid %>
+      <%= form.text_field :call_sid %>
+    </div>
+    <div>
+      <%= form.submit "Disconnect Call" %>
+    </div>
+  <% end %>
+</div>
+<h2><i id="note-icon" class="bi bi-journal-plus"></i></h2>

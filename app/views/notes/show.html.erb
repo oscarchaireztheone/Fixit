@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>note_content:</strong>
+  <%= @note.note_content %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @note.phone_number %>
+</p>
+
+<p>
+  <strong>Call:</strong>
+  <%= @note.call_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @note.status %>
+</p>
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>

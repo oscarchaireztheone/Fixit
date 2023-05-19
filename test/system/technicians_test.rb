@@ -15,6 +15,7 @@ class TechniciansTest < ApplicationSystemTestCase
     click_on "New Technician"
 
     fill_in "Email", with: @technician.email
+    fill_in "Working", with: @technician.working
     fill_in "Employeenum", with: @technician.employeeNum
     fill_in "Name", with: @technician.name
     fill_in "Other", with: @technician.other
@@ -30,6 +31,7 @@ class TechniciansTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Email", with: @technician.email
+    fill_in "Working", with: @technician.working
     fill_in "Employeenum", with: @technician.employeeNum
     fill_in "Name", with: @technician.name
     fill_in "Other", with: @technician.other
