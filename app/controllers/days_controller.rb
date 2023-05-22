@@ -73,15 +73,19 @@ class DaysController < ApplicationController
           render json: @days
         when :post
           @day = Day.new(day_params)
+          Rails.logger.warn(day_params.day_id)
           if @day.save
             render json: @day, status: :created
           else
             render json: @day.errors, status: :unprocessable_entity
           end
         when :put, :patch
+          @samsungcall = Samsungcall.find_by(id: params[:call_id])
+          Rails.logger.warn("Here is the samsung call #{@samsungcall.name}")
           @day = Day.find(params[:id])
           Rails.logger.warn "From within the update"
           if @day.update(day_params)
+            @samsungcall.update(day_id: @day.id)
             render json: @day, status: :ok
           else
             render json: @day.errors, status: :unprocessable_entity
