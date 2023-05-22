@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :crews
   get 'api_html/portal'
-  get 'api_html/dashboard'
+  get 'dashboard', to: 'api_html#dashboard'
   get 'api_html/techschedule'
   get 'api_html/makecall'
   resources :notes do
@@ -72,6 +72,7 @@ Rails.application.routes.draw do
   post 'initiate_call_and_join_conference', to: 'twilio_actions#initiate_call_and_join_conference'
   post 'join_conference', to: 'twilio_actions#join_conference'
   post 'disconnect_call', to: 'twilio_actions#disconnect_call'
+  post 'dial', to: 'twilio_actions#dial'
   get 'schedules', to: 'schedules#index'
   resources :agents
   resources :technicians

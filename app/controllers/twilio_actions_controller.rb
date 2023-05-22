@@ -25,9 +25,12 @@ class TwilioActionsController < ApplicationController
 	end
 
 	def start_conference_call
+		
+		phone = current_crew.assignable.phone
+		Rails.logger.warn(" Cureent crew is here#{current_crew}")
 		call = @client.calls.create(
 		url: "http://twimlets.com/conference?Name=#{CONNAME}",
-		to: MYNUM,
+		to: phone,
 		from: TWILIO_PHONE_NUMBER
 		)
     	render json: { message: 'connected to the conference.'}
@@ -48,14 +51,28 @@ class TwilioActionsController < ApplicationController
 
 	def initiate_call_and_join_conference()
 		from_phone_number = TWILIO_PHONE_NUMBER
-		to_phone_number = params[:to]
-		call = @client.calls.create(
-		url: "#{API_BASE_URL}/join_conference",
+		phone2 = params[:to]
+		to_phone_number = current_crew.assignable.phone
+
+		@call = @client.calls.create(
+		url: "#{API_BASE_URL}/dial?to=#{phone2}",
 		to: to_phone_number,
 		from: from_phone_number
 		)
-    	render json: { message: 'Call initiated and connected to the conference.', call_sid: call.sid }
+		session[:call_sid1] = @call.sid
+    	render json: { message: 'Call initiated and connected to the conference.', call_sid: @call.sid }
 	end
+	def dial 
+		  number = params[:to]
+
+		  twiml = Twilio::TwiML::VoiceResponse.new do |response|
+		    response.dial do |dial|
+		      dial.number(number)
+		    end
+		  end
+
+		  render xml: twiml.to_s
+		end
 
 
 	def send_text
@@ -72,10 +89,15 @@ class TwilioActionsController < ApplicationController
 	end
 
 	def disconnect_call
-	    call_sid = params[:call_sid]
-	    @client.calls(call_sid).update(status: 'completed')
-	    flash[:notice] = "Call disconnected successfully."
-	    render json: { message: 'Call disconnected.' }
+		@call_sid1 = session[:call_sid1]
+
+	    @client.calls(@call_sid1).update(status: 'completed')
+
+	    render json: { message: 'Call terminated.', call_sid1: @call_sid1 }
+	    # call_sid = params[:call_sid]
+	    # @client.calls(call_sid).update(status: 'completed')
+	    # flash[:notice] = "Call disconnected successfully."
+	    # render json: { message: 'Call disconnected.' }
 	end
 
 	# def make_call
