@@ -179,7 +179,7 @@ class Api::ServiceManagerController < ApplicationController
 			note_content: content,
 			phone_number: ENV['TWILIO_PHONE_NUMBER'],
 			call_id: payload[:call_id],
-			status: "6"
+			status: "12"
 		}
 		note = Note.create(note_data)
 	end
@@ -245,11 +245,11 @@ class Api::ServiceManagerController < ApplicationController
 	end
 	def note_cat_dictionary(cat)
 		category_mappings = {
-		1 => 'Auto Appointment Success',
+		1 => 'Auto Appointment Success, please update Appropriate Portal',
 		2 => 'Some other System message'
 		}
-
-		category_mappings[cat] || slot
+		## || slot changed to || cat
+		category_mappings[cat] || cat
 	end
 
 	  # Only allow a list of trusted parameters through.
