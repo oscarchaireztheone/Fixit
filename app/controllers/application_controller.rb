@@ -26,8 +26,6 @@ class ApplicationController < ActionController::Base
   end
   def authenticate_token
     authenticate_or_request_with_http_token do |token|
-      Rails.logger.warn("token from inside the authenticat_token app")
-      Rails.logger.warn(token.inspect)
       Crew.exists?(auth_token: token)
     end
   end

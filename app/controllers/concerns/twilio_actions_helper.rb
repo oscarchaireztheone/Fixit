@@ -1,9 +1,8 @@
 
 
-AUTO_SCHEDULE_TEMPLATE = 'Hello %{name}, this is the Appliance 2020 automated appoinment 
-scheduler. click the link below and you will be directed to our web portal where you can select an availble
-appointment slots for your appliance repair. Alternatively, you wait untill Tuesday or Thursday between for 
-one of out team members to contact you about setting up an appoinment. Thank you. "%{link}"'
+AUTO_SCHEDULE_TEMPLATE = 'Hello %{name}, This is the Appliance2020 automated appoinment 
+scheduler. Click the link below to be directed to our web portal where you can select an
+appointment slots for your appliance repair."%{link}", This is easier on us and faster for you'
 AERT_TECH_TEMPLATE = 'Appointment %{name}: %{time} Confirmed'
 
 module TwilioActionsHelper
@@ -21,7 +20,7 @@ module TwilioActionsHelper
     	)
   	end
 
-    def send_tech_alert(to= ENV['MYNUM'], variables)
+    def send_tech_alert(variables, to= ENV['MYNUM'])
       body = AERT_TECH_TEMPLATE % variables
       client = Twilio::REST::Client.new(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
       client.messages.create(

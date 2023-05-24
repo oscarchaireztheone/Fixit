@@ -190,7 +190,7 @@ class Api::ServiceManagerController < ApplicationController
 		variables = {
 			name: payload[:name],
 			time: time,
-			link: "link be buil later fool"
+			link: ""
 		}
 
 		send_tech_alert(payload[:number], variables)

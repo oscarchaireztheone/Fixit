@@ -1,4 +1,5 @@
 class DaysController < ApplicationController
+  include TwilioActionsHelper
   skip_before_action :verify_authenticity_token, only: [:api]
   before_action :set_day, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_crew!, except: [:api]
@@ -80,10 +81,8 @@ class DaysController < ApplicationController
             render json: @day.errors, status: :unprocessable_entity
           end
         when :put, :patch
-          @samsungcall = Samsungcall.find_by(id: params[:call_id])
-          Rails.logger.warn("Here is the samsung call #{@samsungcall.name}")
+          @samsungcall = Samsungcall.find_by(id: params[:call_id])         
           @day = Day.find(params[:id])
-          Rails.logger.warn "From within the update"
           if @day.update(day_params)
             @samsungcall.update(day_id: @day.id)
             render json: @day, status: :ok

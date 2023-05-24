@@ -52,14 +52,15 @@ class TwilioActionsController < ApplicationController
 	def initiate_call_and_join_conference()
 		from_phone_number = TWILIO_PHONE_NUMBER
 		phone2 = params[:to]
-		to_phone_number = current_crew.assignable.phone
+		to_phone_number = params[:agent_phone]
 
 		@call = @client.calls.create(
 		url: "#{API_BASE_URL}/dial?to=#{phone2}",
 		to: to_phone_number,
 		from: from_phone_number
 		)
-		session[:call_sid1] = @call.sid
+		# Removed because sessions is not for Api calls
+		#session[:call_sid1] = @call.sid
     	render json: { message: 'Call initiated and connected to the conference.', call_sid: @call.sid }
 	end
 	def dial 
@@ -89,27 +90,14 @@ class TwilioActionsController < ApplicationController
 	end
 
 	def disconnect_call
-		@call_sid1 = session[:call_sid1]
+		@call_sid = params[:call_sid]
 
-	    @client.calls(@call_sid1).update(status: 'completed')
+	    @client.calls(@call_sid).update(status: 'completed')
 
-	    render json: { message: 'Call terminated.', call_sid1: @call_sid1 }
-	    # call_sid = params[:call_sid]
-	    # @client.calls(call_sid).update(status: 'completed')
-	    # flash[:notice] = "Call disconnected successfully."
-	    # render json: { message: 'Call disconnected.' }
+	    render json: { message: 'Call terminated.'}
 	end
 
-	# def make_call
-	# 	to_number = params[:to]
-	# 	@client.calls.create(
-	# 	url: '#{BASEURL}/twilio_actions/twiml',
-	# 	to: to_number,
-	# 	from: TWILIO_PHONE_NUMBER
-	# 	)
-	# 	flash[:notice] = "Call initiated successfully."
-	# 	redirect_to twilio_actions_path
-	# end
+
 
 	private
 

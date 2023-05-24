@@ -21,14 +21,14 @@
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone1 %>
-    <%= form.text_field :phone1 %>
+  <div class="form-content">
+    <label for="samsungcall_phone1">Phone1</label>
+    <%= text_field_tag 'samsungcall[phone1]', @samsungcall.phone1 || "none", id: 'samsungcall_phone1' %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone2 %>
-    <%= form.text_field :phone2 %>
+  <div class="form-content">
+    <label for="samsungcall_phone2">Phone2</label>
+    <%= text_field_tag 'samsungcall[phone2]', @samsungcall.phone2 || "none", id: 'samsungcall_phone2' %>
   </div>
 
   <div class="field">
